@@ -1,6 +1,7 @@
 ---
 name: elixir-phoenix-api
 description: "Use for Phoenix API design and implementation, including routers, controllers, plugs, JSON responses, REST contracts, API versioning, pagination, error handling, authentication boundaries, OpenAPI-style contracts, async 202 workflows, and ConnCase tests."
+license: UNLICENSED
 ---
 
 # Elixir Phoenix API

@@ -1,6 +1,7 @@
 ---
 name: elixir-phoenix-liveview
 description: "Use for Phoenix LiveView development, HEEx templates, function components, LiveComponents, forms, streams, assigns, PubSub updates, uploads, live navigation, accessibility, realtime UX, and LiveView tests."
+license: UNLICENSED
 ---
 
 # Elixir Phoenix LiveView

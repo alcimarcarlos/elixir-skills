@@ -1,6 +1,7 @@
 ---
 name: elixir-testing-quality
 description: "Use for Elixir test writing and quality review, including ExUnit, ConnCase, DataCase, LiveViewTest, Mox, Bypass, StreamData, factories/fixtures, async tests, formatter, Credo, Dialyxir, compile warnings, CI readiness and code review."
+license: UNLICENSED
 ---
 
 # Elixir Testing and Quality

@@ -1,6 +1,7 @@
 ---
 name: elixir-nx-ml
 description: "Use for Numerical Elixir work with Nx, tensors, defn, EXLA, Torchx, Axon, Bumblebee, Scholar, Explorer-adjacent data preparation, embeddings, model inference, numerical pipelines, performance review and tests."
+license: UNLICENSED
 ---
 
 # Elixir Nx and ML

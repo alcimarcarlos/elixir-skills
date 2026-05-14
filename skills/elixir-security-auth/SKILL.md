@@ -1,6 +1,7 @@
 ---
 name: elixir-security-auth
 description: "Use for Elixir/Phoenix security, authentication, authorization, sessions, tokens, Phoenix.Token, plugs, policies, multi-tenant boundaries, uploads, CSRF, CORS, secrets, PII, logging redaction, LiveView security, API security and OWASP-style review."
+license: UNLICENSED
 ---
 
 # Elixir Security and Auth

@@ -1,6 +1,7 @@
 ---
 name: elixir-ecto-data-performance
 description: "Use for Ecto schemas, changesets, queries, associations, migrations, Repo usage, transactions, Ecto.Multi, preloads, N+1 prevention, indexes, database constraints, data migrations, large datasets, caching-adjacent data access, and performance review."
+license: UNLICENSED
 ---
 
 # Elixir Ecto Data and Performance
