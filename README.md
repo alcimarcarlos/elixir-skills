@@ -58,7 +58,9 @@ Este pacote não é uma aplicação final. Ele é uma coleção portátil de ins
 | `elixir-phoenix-api` | Use for Phoenix API design and implementation, including routers, controllers, plugs, JSON responses, REST contracts, API versioning, pagination, error handling, authentication boundaries, OpenAPI-style contracts, async 202 workflows, and ConnCase tests. |
 | `elixir-phoenix-liveview` | Use for Phoenix LiveView development, HEEx templates, function components, LiveComponents, forms, streams, assigns, PubSub updates, uploads, live navigation, accessibility, realtime UX, and LiveView tests. |
 | `elixir-security-auth` | Use for Elixir/Phoenix security, authentication, authorization, sessions, tokens, Phoenix.Token, plugs, policies, multi-tenant boundaries, uploads, CSRF, CORS, secrets, PII, logging redaction, LiveView security, API security and OWASP-style review. |
+| `elixir-systematic-debugging` | Systematic root-cause debugging protocol for Elixir and Phoenix: prohibits guessing, enforces minimal failing ExUnit test reproducers, single-variable fixes, and non-regression verification. |
 | `elixir-testing-quality` | Use for Elixir test writing and quality review, including ExUnit, ConnCase, DataCase, LiveViewTest, Mox, Bypass, StreamData, factories/fixtures, async tests, formatter, Credo, Dialyxir, compile warnings, CI readiness and code review. |
+| `elixir-zero-downtime-migrations` | Zero-downtime database migration strategies in Elixir and Ecto (PostgreSQL): Expand/Contract pattern, concurrent non-blocking indexes, safe schema transitions, partitioned backfills, and table lock prevention. |
 
 ## Qualidade e Validação
 
