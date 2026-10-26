@@ -42,6 +42,11 @@ license: UNLICENSED
 - Scope queries by actor/tenant where applicable.
 - Avoid N+1 and unbounded lists; preload intentionally and paginate.
 - Never expose sensitive fields in JSON or errors.
+- Cap page size and reject unbounded `limit`; enforce a max even when the client requests more.
+- Bound request body size in `Plug.Parsers` (`:length`) and validate content type before parsing.
+- Rate-limit write-heavy, auth and abuse-prone endpoints.
+- Set timeouts on downstream calls so a slow dependency cannot exhaust the request pool.
+- Return RFC-style consistent error bodies; never leak stack traces, SQL or struct internals.
 
 ## Reference
 

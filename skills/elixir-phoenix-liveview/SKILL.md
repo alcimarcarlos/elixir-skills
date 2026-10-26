@@ -37,6 +37,15 @@ license: UNLICENSED
 - Keep IDs stable for patches, streams and tests.
 - Test both initial render and event-driven updates.
 
+## Stability + Performance Defaults
+
+- Each connected LiveView is a long-lived process; keep assigns small and use streams/`temporary_assigns` so memory does not grow per connection.
+- Re-check authorization in `mount/3` and event handlers; client-pushed events and params are untrusted even after mount.
+- Offload slow work to `assign_async`/`start_async` so the LiveView process and its message queue stay responsive.
+- Debounce/throttle high-frequency events (`phx-debounce`/`phx-throttle`) to avoid flooding the process mailbox.
+- Validate uploads (size, count, MIME, extension) with `allow_upload/3` constraints, not only client hints.
+- Move heavy computation into contexts and cache derived data; avoid recomputing large structures on every render.
+
 ## Reference
 
 Read `reference.md` for detailed patterns, checklists, and examples for this skill.

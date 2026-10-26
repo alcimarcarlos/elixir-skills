@@ -22,6 +22,16 @@
 - Use `preload` intentionally; avoid preloading everything by default.
 - Keep dynamic filters whitelisted.
 - Avoid `Repo.all` for unbounded user-facing lists.
+- Use `Repo.stream/2` (inside a transaction) for exports and large scans.
+- Pass `:timeout` for known-slow queries instead of relying on the default.
+- Verify the plan with `EXPLAIN`/`Repo.explain/3` when a query is hot or suspected slow.
+
+## Pools and Concurrency
+
+- Size the pool to actual concurrent DB work; an oversized pool can overwhelm the database.
+- Keep transactions short; never hold a connection across external HTTP/sleep/IO.
+- Set `:queue_target`/`:queue_interval` awareness when checkout timeouts appear under load.
+- Acquire locks in a consistent order across code paths to prevent deadlocks.
 
 ## Transactions
 
@@ -35,6 +45,8 @@
 - Use concurrent index creation patterns if the project supports them and the DB requires low-lock changes.
 - Split risky large-table changes into additive phases.
 - Keep data migrations idempotent when they may be rerun.
+- Disable the migration transaction (`@disable_ddl_transaction true`) only for concurrent index builds, and backfill data in bounded batches.
+- Add `NOT NULL`/constraints in phases on large tables (add nullable, backfill, validate, enforce) to avoid long locks.
 
 ## Quality Gates
 

@@ -37,6 +37,22 @@ license: UNLICENSED
 - Prefer cursor/keyset style pagination for large ordered datasets where UX allows it.
 - Keep migrations reversible unless a one-way data operation is intentional and documented.
 
+## Performance Defaults
+
+- `select` only needed columns on hot paths; avoid loading large text/JSON/binary columns you do not use.
+- Process large result sets with `Repo.stream/2` inside a transaction instead of `Repo.all`.
+- Batch inserts/updates with `Repo.insert_all/3`/`update_all/3` rather than per-row writes in a loop.
+- Preload with separate queries or joins deliberately; never trigger lazy association loads inside render/serialize loops (N+1).
+- Set explicit query/transaction timeouts and size the connection pool to real concurrency, not an arbitrary large number.
+- Keep transactions short; do not perform HTTP calls, sleeps or external I/O while holding a DB connection.
+
+## Stability Defaults
+
+- Enforce invariants with DB constraints (unique, FK, check, not-null), not only changeset validations, to survive races.
+- Acquire row locks (`lock: "FOR UPDATE"`) in a consistent order to avoid deadlocks on concurrent updates.
+- Run heavy/locking DDL with safe-migration patterns (concurrent indexes, additive phases, backfill in batches) to avoid long table locks.
+- Make data migrations idempotent and resumable; never assume a one-shot run on large tables.
+
 ## Reference
 
 Read `reference.md` for detailed patterns, checklists, and examples for this skill.

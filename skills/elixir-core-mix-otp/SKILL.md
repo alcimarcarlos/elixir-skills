@@ -40,6 +40,22 @@ license: UNLICENSED
 - Prefer tagged tuples for recoverable outcomes.
 - Do not hide errors with broad `rescue`; let supervisors restart crashable processes.
 
+## Stability Defaults
+
+- Set explicit timeouts on every `GenServer.call/3`, `Task.await/2` and external call; never rely on the implicit 5s default silently.
+- Tune supervisor restart intensity (`max_restarts`, `max_seconds`) so a crash loop fails fast instead of hammering dependencies.
+- Set `:shutdown` per child and trap exits only when cleanup is required; avoid `:brutal_kill` for processes holding resources.
+- Bound concurrency with `Task.async_stream/3` (`max_concurrency`, `timeout`, `on_timeout: :kill_task`) instead of spawning unbounded tasks.
+- Treat a growing process mailbox as a back-pressure failure; add demand control (GenStage/Broadway) or drop/reject load deliberately.
+- Make `init/1` fast and non-blocking; do slow work in `handle_continue/2` so startup and supervision stay responsive.
+
+## Performance Defaults
+
+- Do not funnel read-heavy or hot-path state through a single GenServer; use ETS (`:read_concurrency`/`:write_concurrency`) or `:persistent_term` for near-static data.
+- Avoid copying large binaries/terms between processes; pass references/IDs and read shared state from ETS.
+- Never create atoms from untrusted input (`String.to_existing_atom/1`, not `String.to_atom/1`) to prevent atom-table exhaustion and VM crashes.
+- Prefer streaming/lazy enumerables over building large intermediate lists in memory.
+
 ## Reference
 
 Read `reference.md` for detailed patterns, checklists, and examples for this skill.

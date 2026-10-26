@@ -36,12 +36,25 @@ license: UNLICENSED
 - Never log secrets, tokens, passwords, raw PII payloads or payment data.
 - Avoid sensitive data in LiveView assigns, PubSub messages, job args and telemetry metadata.
 
+## Hardening Defaults
+
+- Compare secrets, tokens and signatures in constant time with `Plug.Crypto.secure_compare/2`; never use `==` on secret material.
+- Convert external strings with `String.to_existing_atom/1`, never `String.to_atom/1`, to prevent atom-table exhaustion (DoS).
+- Hash passwords with a vetted KDF (Argon2/Bcrypt/Pbkdf2 via `comeonin`); never roll custom crypto or store reversible secrets.
+- Rotate session/CSRF identifiers on login and privilege change to prevent session fixation.
+- Rate-limit and throttle authentication, token, password-reset and other abuse-prone endpoints.
+- Bound request/upload size, decompression and pagination to prevent resource-exhaustion (zip bombs, huge bodies, unbounded `limit`).
+- Set timeouts and SSRF allowlists on outbound requests built from user-influenced URLs; block internal/metadata addresses.
+- Keep secrets in runtime config/secret managers; load them in `config/runtime.exs`, never in committed config or compiled artifacts.
+
 ## Structured Threat Checks
 
 - Broken access control: ownership, tenant boundaries, admin bypass paths.
-- Injection: raw SQL fragments, unsafe dynamic order/filter, untrusted HTML.
+- Injection: raw SQL fragments, unsafe dynamic order/filter, untrusted HTML, atom/code interpolation.
 - Sensitive data exposure: JSON, logs, assigns, jobs, broadcasts, exception reports.
 - SSRF/file upload: user-supplied URLs, storage visibility, signed URL scope and MIME enforcement.
+- Resource exhaustion: unbounded lists, large uploads, atom creation, expensive regex on untrusted input.
+- Timing attacks: non-constant-time comparison of tokens, signatures or password hashes.
 
 ## Reference
 

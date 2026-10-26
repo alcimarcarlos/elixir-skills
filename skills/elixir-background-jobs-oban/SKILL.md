@@ -36,6 +36,16 @@ license: UNLICENSED
 - Use uniqueness for duplicate prevention, but still make effects idempotent.
 - Instrument or log with redacted metadata.
 
+## Stability + Performance Defaults
+
+- Bound `max_attempts` and use capped exponential backoff so failing jobs do not retry forever or stampede dependencies.
+- Set per-queue concurrency limits matched to downstream capacity (DB pool, external API), not an arbitrary high number.
+- Enforce a job timeout so a stuck worker is reclaimed instead of holding a slot indefinitely.
+- Make `perform/1` idempotent and guard against duplicate execution (uniqueness + an idempotency key/state check).
+- Keep args small (IDs and primitives); load fresh records inside the worker so retries use current state.
+- Enable pruning/retention and route exhausted jobs to a discard/dead-letter path with observability.
+- Keep DB transactions short inside workers; do external I/O outside the transaction and after commit.
+
 ## Reference
 
 Read `reference.md` for detailed patterns, checklists, and examples for this skill.

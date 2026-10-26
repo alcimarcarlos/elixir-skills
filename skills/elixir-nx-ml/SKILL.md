@@ -34,6 +34,14 @@ license: UNLICENSED
 - Avoid silently converting huge datasets into memory-heavy tensors.
 - Test with tiny fixtures and tolerance-based assertions for floats.
 
+## Stability + Performance Defaults
+
+- Load and compile models/servings once at startup; never recompile `defn` or reload weights per request.
+- Run inference behind a supervised `Nx.Serving` (or the project's serving) with batching, a bounded queue and timeouts so spikes do not exhaust memory.
+- Pin backend/compiler per environment and validate device (CPU/GPU) availability at boot to fail fast.
+- Cap batch size and reject oversized inputs; stream large datasets instead of materializing one giant tensor.
+- Validate input shape/dtype at the boundary before entering `defn` to turn silent miscompiles into clear errors.
+
 ## Reference
 
 Read `reference.md` for detailed patterns, checklists, and examples for this skill.

@@ -43,3 +43,8 @@ mix compile --warnings-as-errors
 - Hidden N+1 in render/serialization paths.
 - Job retry/idempotency untested.
 - LiveView tests that assert text only while missing event behavior.
+- Unbounded lists/pagination caps untested.
+- Missing timeouts on `GenServer.call`/`Task.await`/external calls.
+- Secret comparison not constant-time; atoms created from external input.
+- DB invariants relying on changeset only, without unique/FK/check constraints.
+- Resource-exhaustion paths (large uploads, oversized bodies, huge batches) unbounded.
