@@ -1,6 +1,6 @@
 ---
 name: elixir-ash-framework
-description: "Use for Ash Framework development, including resources, domains, actions, code interfaces, policies, validations, changes, calculations, aggregates, data layers, AshPostgres, AshPhoenix, AshJsonApi, AshGraphql, actor/tenant authorization, testing and architecture decisions."
+description: "Ash Framework development: resources, domains, actions, policies, calculations, AshPostgres. Trigger on Ash tasks."
 license: UNLICENSED
 ---
 

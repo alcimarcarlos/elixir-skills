@@ -1,6 +1,6 @@
 ---
 name: elixir-core-mix-otp
-description: "Use for core Elixir application development, Mix projects, OTP architecture, Application callbacks, supervisors, GenServer, Agent, Task, Registry, DynamicSupervisor, PubSub-adjacent process design, runtime config, releases, code review, and architecture decisions."
+description: "Elixir/OTP core: GenServer, supervisors, Tasks, Registry, runtime config. Trigger on OTP and Mix architecture."
 license: UNLICENSED
 ---
 

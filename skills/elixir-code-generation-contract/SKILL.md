@@ -1,6 +1,6 @@
 ---
 name: elixir-code-generation-contract
-description: "Enforces a mandatory output contract for Elixir and Phoenix code generation, ensuring Context boundaries, Ecto Changesets, pattern matching, typespecs, ExUnit tests, and OTP resilience defaults. Trigger when implementing any Phoenix route, controller, LiveView, or Elixir domain feature."
+description: "Mandatory output contract for Elixir/Phoenix: Context boundary, Changesets, ExUnit tests. Trigger on new feature slices."
 license: UNLICENSED
 ---
 

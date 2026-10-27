@@ -1,6 +1,6 @@
 ---
 name: elixir-background-jobs-oban
-description: "Use for Oban background jobs, workers, queues, retries, scheduling, cron, uniqueness, idempotency, backoff, telemetry, plugins, job arguments, observability, and Oban testing."
+description: "Oban background jobs: workers, queues, retries, idempotency, unique jobs. Trigger on async and background jobs."
 license: UNLICENSED
 ---
 

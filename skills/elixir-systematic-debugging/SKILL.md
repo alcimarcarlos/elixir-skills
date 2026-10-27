@@ -1,6 +1,6 @@
 ---
 name: elixir-systematic-debugging
-description: "Systematic root-cause debugging protocol for Elixir and Phoenix: prohibits guessing, enforces minimal failing ExUnit test reproducers, single-variable fixes, and non-regression verification."
+description: "Elixir systematic debugging: minimal ExUnit test reproducers, single-variable fixes. Trigger when diagnosing bugs."
 license: UNLICENSED
 ---
 

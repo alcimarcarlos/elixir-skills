@@ -1,6 +1,6 @@
 ---
 name: elixir-zero-downtime-migrations
-description: "Zero-downtime database migration strategies in Elixir and Ecto (PostgreSQL): Expand/Contract pattern, concurrent non-blocking indexes, safe schema transitions, partitioned backfills, and table lock prevention."
+description: "Zero-downtime migrations in Ecto: concurrent indexes, Expand/Contract, backfills. Trigger on Ecto migrations."
 license: UNLICENSED
 ---
 

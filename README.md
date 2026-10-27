@@ -49,18 +49,18 @@ Este pacote não é uma aplicação final. Ele é uma coleção portátil de ins
 
 | Skill | Quando usar |
 | --- | --- |
-| `elixir-ash-framework` | Use for Ash Framework development, including resources, domains, actions, code interfaces, policies, validations, changes, calculations, aggregates, data layers, AshPostgres, AshPhoenix, AshJsonApi, AshGraphql, actor/tenant authorization, testing and architecture decisions. |
-| `elixir-background-jobs-oban` | Use for Oban background jobs, workers, queues, retries, scheduling, cron, uniqueness, idempotency, backoff, telemetry, plugins, job arguments, observability, and Oban testing. |
-| `elixir-code-generation-contract` | Enforces a mandatory output contract for Elixir and Phoenix code generation, ensuring Context boundaries, Ecto Changesets, pattern matching, typespecs, ExUnit tests, and OTP resilience defaults. Trigger when implementing any Phoenix route, controller, LiveView, or Elixir domain feature. |
-| `elixir-core-mix-otp` | Use for core Elixir application development, Mix projects, OTP architecture, Application callbacks, supervisors, GenServer, Agent, Task, Registry, DynamicSupervisor, PubSub-adjacent process design, runtime config, releases, code review, and architecture decisions. |
-| `elixir-ecto-data-performance` | Use for Ecto schemas, changesets, queries, associations, migrations, Repo usage, transactions, Ecto.Multi, preloads, N+1 prevention, indexes, database constraints, data migrations, large datasets, caching-adjacent data access, and performance review. |
-| `elixir-nx-ml` | Use for Numerical Elixir work with Nx, tensors, defn, EXLA, Torchx, Axon, Bumblebee, Scholar, Explorer-adjacent data preparation, embeddings, model inference, numerical pipelines, performance review and tests. |
-| `elixir-phoenix-api` | Use for Phoenix API design and implementation, including routers, controllers, plugs, JSON responses, REST contracts, API versioning, pagination, error handling, authentication boundaries, OpenAPI-style contracts, async 202 workflows, and ConnCase tests. |
-| `elixir-phoenix-liveview` | Use for Phoenix LiveView development, HEEx templates, function components, LiveComponents, forms, streams, assigns, PubSub updates, uploads, live navigation, accessibility, realtime UX, and LiveView tests. |
-| `elixir-security-auth` | Use for Elixir/Phoenix security, authentication, authorization, sessions, tokens, Phoenix.Token, plugs, policies, multi-tenant boundaries, uploads, CSRF, CORS, secrets, PII, logging redaction, LiveView security, API security and OWASP-style review. |
-| `elixir-systematic-debugging` | Systematic root-cause debugging protocol for Elixir and Phoenix: prohibits guessing, enforces minimal failing ExUnit test reproducers, single-variable fixes, and non-regression verification. |
-| `elixir-testing-quality` | Use for Elixir test writing and quality review, including ExUnit, ConnCase, DataCase, LiveViewTest, Mox, Bypass, StreamData, factories/fixtures, async tests, formatter, Credo, Dialyxir, compile warnings, CI readiness and code review. |
-| `elixir-zero-downtime-migrations` | Zero-downtime database migration strategies in Elixir and Ecto (PostgreSQL): Expand/Contract pattern, concurrent non-blocking indexes, safe schema transitions, partitioned backfills, and table lock prevention. |
+| `elixir-ash-framework` | Ash Framework development: resources, domains, actions, policies, calculations, AshPostgres. Trigger on Ash tasks. |
+| `elixir-background-jobs-oban` | Oban background jobs: workers, queues, retries, idempotency, unique jobs. Trigger on async and background jobs. |
+| `elixir-code-generation-contract` | Mandatory output contract for Elixir/Phoenix: Context boundary, Changesets, ExUnit tests. Trigger on new feature slices. |
+| `elixir-core-mix-otp` | Elixir/OTP core: GenServer, supervisors, Tasks, Registry, runtime config. Trigger on OTP and Mix architecture. |
+| `elixir-ecto-data-performance` | Ecto data performance: schemas, queries, transactions, N+1 prevention, indexes. Trigger on Ecto DB access. |
+| `elixir-nx-ml` | Numerical Elixir with Nx: tensors, defn, EXLA, Axon, Bumblebee, Scholar. Trigger on ML or numerical pipelines. |
+| `elixir-phoenix-api` | Phoenix REST APIs: routers, controllers, JSON views, auth, pagination, ConnCase. Trigger on Phoenix API endpoints. |
+| `elixir-phoenix-liveview` | Phoenix LiveView: HEEx components, forms, streams, assigns, PubSub, LiveViewTest. Trigger on LiveView UI. |
+| `elixir-security-auth` | Elixir/Phoenix security: sessions, tokens, policies, tenant isolation, PII, rate limiting. Trigger on auth and security. |
+| `elixir-systematic-debugging` | Elixir systematic debugging: minimal ExUnit test reproducers, single-variable fixes. Trigger when diagnosing bugs. |
+| `elixir-testing-quality` | Elixir testing quality: ExUnit, DataCase, ConnCase, Mox, Credo, Dialyzer. Trigger when writing or reviewing tests. |
+| `elixir-zero-downtime-migrations` | Zero-downtime migrations in Ecto: concurrent indexes, Expand/Contract, backfills. Trigger on Ecto migrations. |
 
 ## Qualidade e Validação
 
